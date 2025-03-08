@@ -20,8 +20,8 @@ A copy of relevant logs from any scripts that were run.
 
 
 <details>
-<summary>`bash scripts/version-check.sh`</summary>
-</br>
+<summary><code>bash scripts/version-check.sh</code></summary>
+  
 ```bash 
 OK:    Coreutils 9.1    >= 8.1
 OK:    Bash      5.2.15 >= 3.2
