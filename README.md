@@ -16,7 +16,7 @@ The main work is done on a debian (bookworm ver. 12.9.0) distro installed on hyp
 ### Logs
 A copy of relevant logs from any scripts that were run.
 
-#### Checking system requirements
+#### Checking host system requirements
 
 
 <details>
@@ -54,4 +54,24 @@ scripts/version-check.sh: line 93: g++: command not found
 ERROR: g++ does NOT work
 OK: nproc reports 8 logical cores are available
 ```
+
+Most of these errors can be fixed by:
+```bash
+sudo apt install build-essential
+```
+
+**Cannot find texi2any (TexInfo)**: `sudo apt install texinfo`
+**awk is NOT GNU** | **yacc is NOT Bison**: `sudo apt install gawk bison`
+
+<details>
+<summary><strong>sh is NOT Bash</strong></summary>
+
+The [`chsh`](https://manpages.ubuntu.com/manpages/focal/en/man1/chsh.1.html) command did NOT work on my system.
+
+So I resorted to a rather unsightly solution:
+
+```bash
+sudo ln -sf /usr/bin/bash /usr/bin/sh
+```
+</details>
 </details>
