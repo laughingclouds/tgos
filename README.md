@@ -13,6 +13,16 @@ The main work is done on a debian (bookworm ver. 12.9.0) distro installed on hyp
 - Shell: bash 5.2.15
 - DE: Xfce 4.18
 
+### Slight change(s)
+Instead of using the default linker (ld); which is quite slow I have opted to use [mold](https://github.com/rui314/mold?tab=readme-ov-file#compile-mold).
+I will attempt to use it and see if I succeed. This is also a completely optional step. If this step works, I 
+might update [version-check.sh](scripts/version-check.sh) to incorporate that change.
+
+I have also decided against using a swap partition. I have enough ram for both my host OS and guest OS.
+
+Aside from these, I'm also going to prioritize using GUI tools whenever they make my life easier. For example,
+using GParted instead of `fdisk` and `mkfs` since I don't know these tools very well. Learning them takes a lower priority for now.
+
 ### Logs
 A copy of relevant logs from any scripts that were run.
 
