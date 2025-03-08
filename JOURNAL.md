@@ -83,3 +83,27 @@ sudo ln -sf /usr/bin/bash /usr/bin/sh
 ```
 </details>
 </details>
+
+
+### LFS Variable, umask, mounting
+
+In `.bashrc` for users **root** and **laughingclouds** (replace with your username):
+
+```bash
+export LFS=/mnt/lfs
+umask 022    # my systems default value was already 0022
+```
+
+For mounting the lfs parition:
+
+```bash
+sudo mkdir -pv /mnt/$LFS    # parents, verbose
+sudo mount -v -t ext4 /dev/sda3 $LFS    # verbose, type
+```
+
+For automatically mounting on every startup `sudo nano /etc/fstab`:
+
+```bash
+# new lfs partition /dev/sda3
+/dev/sda3 /mnt/lfs      ext4    defaults        1       1
+```
