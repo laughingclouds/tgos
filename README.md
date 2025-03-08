@@ -61,6 +61,7 @@ sudo apt install build-essential
 ```
 
 **Cannot find texi2any (TexInfo)**: `sudo apt install texinfo`
+
 **awk is NOT GNU** | **yacc is NOT Bison**: `sudo apt install gawk bison`
 
 <details>
