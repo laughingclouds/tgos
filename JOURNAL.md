@@ -87,6 +87,8 @@ sudo ln -sf /usr/bin/bash /usr/bin/sh
 
 ### LFS Variable, umask, mounting
 
+<details>
+  
 In `.bashrc` for users **root** and **laughingclouds** (replace with your username):
 
 ```bash
@@ -107,3 +109,4 @@ For automatically mounting on every startup `sudo nano /etc/fstab`:
 # new lfs partition /dev/sda3
 /dev/sda3 /mnt/lfs      ext4    defaults        1       1
 ```
+</details>
