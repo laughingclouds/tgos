@@ -110,3 +110,15 @@ For automatically mounting on every startup `sudo nano /etc/fstab`:
 /dev/sda3 /mnt/lfs      ext4    defaults        1       1
 ```
 </details>
+
+
+### Fetch sources
+
+First get the list of required 3rd party sources from the LFS site:
+
+```bash
+cd $LFS
+wget _LIST_LINK_ -O wget-list-sysv
+```
+
+And verify the packages using `md5sum`.
