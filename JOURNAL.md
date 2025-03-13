@@ -123,10 +123,21 @@ wget _LIST_LINK_ -O wget-list-sysv
 
 And verify the packages using `md5sum`.
 
+
 ### Building binutils
 
 For using with mold you can use `LDFLAGS="-fuse-ld=mold"` with the `configure` program.
 
 ```bash
 time { ../configure LDFLAGS="-fuse-ld=mold" --prefix=$LFS/tools --with-sysroot=$LFS --target=$LFS_TGT --disable-nls --enable-gprofng=no --disable-werror --enable-new-dtags --enable-default-hash-style=gnu && make && make install; }
+```
+
+### Building gcc
+
+**Slight change**:
+Since, the final command `cat gcc/limitx.h gcc/glimits.h gcc/limity.h...` could not recognize my built gcc under `$LFS/tools/bin`
+I made a slight addition to the above command:
+
+```bash
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h >   `dirname $($LFS/tools/bin/$LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h
 ```
