@@ -3,3 +3,6 @@
 
 # ignore all downloaded 3rd party sources
 sources/**
+
+# ignore tools directory, it has a compiler that won't be used by the system
+tools/**
