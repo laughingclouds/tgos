@@ -167,3 +167,9 @@ I could not for the life of me make the relative paths work when creating symbol
 Plus, my host system (debian 12 bookworm) has the required dynamic linker (or loader) under /lib64 (which itself is a link to the `/lib/x86_64-linux-gnu/...` file).
 
 So I ended up using absolute paths.
+
+```bash
+ln -sv /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 $LFS/lib64/
+ln -sv /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 $LFS/lib64/ld-linux-x86-64.so.3
+```
+
