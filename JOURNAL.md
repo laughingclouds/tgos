@@ -173,3 +173,11 @@ ln -sv /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 $LFS/lib64/
 ln -sv /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 $LFS/lib64/ld-linux-x86-64.so.3
 ```
 
+`../configure` command:
+
+```bash
+../configure LDFLAGS="-fuse-ld=mold" --prefix=/usr --host=$LFS_TGT --build=$(../scripts/config.guess) --enable-kernel=5.4 --with-headers=$LFS/usr/include --disable-nscd libc_cv_slibdir=/usr/lib
+```
+
+It seems like using mold is causing a problem in compiling mathvec library. The target **libmvec.so.1** was not being created.
+OR, I realized I did not extract the glib tarball as user lfs. I wonder if that could've caused a problem?
