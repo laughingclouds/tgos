@@ -181,3 +181,10 @@ ln -sv /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 $LFS/lib64/ld-linux-x86-64.so.
 
 It seems like using mold is causing a problem in compiling mathvec library. The target **libmvec.so.1** was not being created.
 OR, I realized I did not extract the glib tarball as user lfs. I wonder if that could've caused a problem?
+
+
+### Building Gcc
+
+```bash
+../libstdc++-v3/configure --host=$LFS_TGT --build=$(../config.guess) --prefix=/usr --disable-multilib --disable-nls --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/14.2.0
+```
