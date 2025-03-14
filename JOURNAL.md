@@ -1,6 +1,9 @@
 # Journal
 For recording my progress on this project. This section will serve as a primitive form of a timeline.
 
+**These are NOT instructions. Simply a record of what I did to make _my_ version of LFS. There can be little 
+changes that may make my installation process different than what the LFS books intends.**
+
 ## System Information
 The main work is done on a debian (bookworm ver. 12.9.0) distro installed on hyper-v with a virtual hard disk of 70 GB.
 
@@ -152,4 +155,15 @@ LFS takes a convoluted but more easily-generically-applied-safer approach becaus
 sudo apt install rsync
 ```
 
+And now we can use the `INSTALL_HDR_PATH` variable to install the API headers directly to $LFS/usr
 
+```bash
+sudo make INSTALL_HDR_PATH=$LFS/usr headers_install
+```
+
+### Building Glibc
+
+I could not for the life of me make the relative paths work when creating symbolic links.
+Plus, my host system (debian 12 bookworm) has the required dynamic linker (or loader) under /lib64 (which itself is a link to the `/lib/x86_64-linux-gnu/...` file).
+
+So I ended up using absolute paths.
