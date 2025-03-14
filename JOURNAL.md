@@ -141,3 +141,15 @@ I made a slight addition to the above command:
 ```bash
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h >   `dirname $($LFS/tools/bin/$LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h
 ```
+
+
+### Linux API Headers
+
+**Slight change**:
+LFS takes a convoluted but more easily-generically-applied-safer approach because rsync may not be available (which it wasn't on my Debian 12 distro).
+
+```bash
+sudo apt install rsync
+```
+
+
